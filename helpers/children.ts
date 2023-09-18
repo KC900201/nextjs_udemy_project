@@ -1,5 +1,5 @@
 import * as React from 'react'
 
-export interface CompProps {
+export interface ComponentProps {
   children: React.ReactNode
 }

@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { CompProps } from '@/helpers/children'
+import { ComponentProps } from '@/helpers/children'
 import MainNavigation from './MainNavigation'
 
 const MainComponent = styled.main`
@@ -8,7 +8,7 @@ const MainComponent = styled.main`
   max-width: 40rem;
 `
 
-function Layout({ children }: CompProps) {
+function Layout({ children }: ComponentProps) {
   return (
     <section>
       <MainNavigation />

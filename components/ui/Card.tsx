@@ -1,6 +1,6 @@
 import * as React from 'react'
 import styled from 'styled-components'
-import { CompProps } from '@/helpers/children'
+import { ComponentProps } from '@/helpers/children'
 
 const CardDiv = styled.div`
   background-color: white;
@@ -8,7 +8,7 @@ const CardDiv = styled.div`
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 `
 
-function Card({ children }: CompProps) {
+function Card({ children }: ComponentProps) {
   return <CardDiv>{children}</CardDiv>
 }
 
