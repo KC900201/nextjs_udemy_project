@@ -9,16 +9,19 @@ const MeetupOrderedList = styled.ul`
 `
 
 function MeetupList({ meetUps }: { meetUps: MeetupItemInterface[] }) {
-  ;<MeetupOrderedList>
-    {meetUps.map((meetup) => (
-      <MeetupItem
-        key={meetup.id}
-        address={meetup.address}
-        src={meetup.image}
-        title={meetup.title}
-      />
-    ))}
-  </MeetupOrderedList>
+  return (
+    <MeetupOrderedList>
+      {meetUps.map((meetup) => (
+        <MeetupItem
+          key={meetup.id}
+          id={meetup.id}
+          address={meetup.address}
+          src={meetup.image}
+          title={meetup.title}
+        />
+      ))}
+    </MeetupOrderedList>
+  )
 }
 
 export default MeetupList

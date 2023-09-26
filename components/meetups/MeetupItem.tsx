@@ -1,3 +1,4 @@
+import { useRouter } from 'next/router'
 import styled from 'styled-components'
 import Image from 'next/image'
 import Card from '../ui/Card'
@@ -46,26 +47,34 @@ const ActionButton = styled.button`
 `
 
 function MeetupItem({
+  id,
   src,
   title,
   address,
 }: {
+  id?: string
   src: string
   title: string
   address: string
 }) {
+  const router = useRouter()
+
+  const showDetailsHandler = () => {
+    router.push('/' + id)
+  }
+
   return (
     <li style={{ margin: '1rem 0' }}>
       <Card>
         <ImageSection>
-          <Image src={src} alt={title} />
+          <Image src={src} width={50} height={50} alt={title} />
         </ImageSection>
         <ContentSection>
           <h3>{title}</h3>
           <address>{address}</address>
         </ContentSection>
         <ActionSection>
-          <ActionButton>Show Details</ActionButton>
+          <ActionButton onClick={showDetailsHandler}>Show Details</ActionButton>
         </ActionSection>
       </Card>
     </li>
