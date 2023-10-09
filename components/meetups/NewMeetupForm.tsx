@@ -49,8 +49,15 @@ const ActionSection = styled.section`
   }
 `
 
+type meetUpDataType = {
+  title: string
+  image: string
+  address: string
+  description?: string
+}
+
 interface FormInterface {
-  onAddMeetup: (meetupData: any) => void
+  onAddMeetup: (meetupData: meetUpDataType) => void
 }
 
 function NewMeetupForm({ onAddMeetup }: FormInterface) {
@@ -62,10 +69,12 @@ function NewMeetupForm({ onAddMeetup }: FormInterface) {
   function submitHandler(event: React.SyntheticEvent) {
     event.preventDefault()
 
-    const enteredTitle = titleInputRef?.current?.valueOf()
-    const enteredImage = imageInputRef?.current?.valueOf()
-    const enteredAddress = addressInputRef?.current?.valueOf()
-    const enteredDescription = descriptionInputRef?.current?.valueOf()
+    const enteredTitle = titleInputRef?.current?.valueOf().toString()
+    const enteredImage = imageInputRef?.current?.valueOf().toString()
+    const enteredAddress = addressInputRef?.current?.valueOf().toString()
+    const enteredDescription = descriptionInputRef?.current
+      ?.valueOf()
+      .toString()
 
     const meetupData = {
       title: enteredTitle,

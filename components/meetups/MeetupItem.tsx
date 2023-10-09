@@ -67,7 +67,7 @@ function MeetupItem({
     <li style={{ margin: '1rem 0' }}>
       <Card>
         <ImageSection>
-          <Image src={src} width={50} height={50} alt={title} />
+          <Image priority src={src} width={50} height={50} alt={title} />
         </ImageSection>
         <ContentSection>
           <h3>{title}</h3>
